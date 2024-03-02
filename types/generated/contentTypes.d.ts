@@ -809,6 +809,7 @@ export interface ApiAtelierAtelier extends Schema.CollectionType {
     singularName: 'atelier';
     pluralName: 'ateliers';
     displayName: 'Ateliers';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -817,6 +818,13 @@ export interface ApiAtelierAtelier extends Schema.CollectionType {
     nomArtisan: Attribute.String;
     illustrationAtelier: Attribute.Media;
     illustrationArtisan: Attribute.Media;
+    objets: Attribute.Relation<
+      'api::atelier.atelier',
+      'oneToMany',
+      'api::objet.objet'
+    >;
+    Vignettepersonnage: Attribute.Media;
+    Textepresentation: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -871,13 +879,23 @@ export interface ApiObjetObjet extends Schema.CollectionType {
     singularName: 'objet';
     pluralName: 'objets';
     displayName: 'Objets';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     nomObjet: Attribute.String;
-    qc_ms: Attribute.Relation<'api::objet.objet', 'oneToMany', 'api::qcm.qcm'>;
+    qcms: Attribute.Relation<'api::objet.objet', 'oneToMany', 'api::qcm.qcm'>;
+    CodeObjet: Attribute.String;
+    CarteZone: Attribute.Media;
+    POI: Attribute.Component<'objet.poi', true>;
+    Fichier3d: Attribute.Media;
+    atelier: Attribute.Relation<
+      'api::objet.objet',
+      'manyToOne',
+      'api::atelier.atelier'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ObjetPoi extends Schema.Component {
+  collectionName: 'components_objet_pois';
+  info: {
+    displayName: 'POI';
+  };
+  attributes: {
+    Cartel: Attribute.Blocks;
+    Media: Attribute.Media;
+  };
+}
+
 export interface QcmReponses extends Schema.Component {
   collectionName: 'components_qcm_reponses';
   info: {
@@ -14,6 +25,7 @@ export interface QcmReponses extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'objet.poi': ObjetPoi;
       'qcm.reponses': QcmReponses;
     }
   }

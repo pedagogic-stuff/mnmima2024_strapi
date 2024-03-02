@@ -4,7 +4,8 @@
   "info": {
     "singularName": "objet",
     "pluralName": "objets",
-    "displayName": "Objets"
+    "displayName": "Objets",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,11 +15,57 @@
     "nomObjet": {
       "type": "string"
     },
-    "qc_ms": {
+    "qcms": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::qcm.qcm",
       "mappedBy": "objet"
+    },
+    "CodeObjet": {
+      "type": "string"
+    },
+    "CarteZone": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "POI": {
+      "displayName": "POI",
+      "type": "component",
+      "repeatable": true,
+      "component": "objet.poi"
+    },
+    "Fichier3d": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "atelier": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::atelier.atelier",
+      "inversedBy": "objets"
+    },
+    "CartelSimple": {
+      "type": "blocks"
+    },
+    "CoordonnesObjet": {
+      "type": "string"
+    },
+    "CodeCouleur": {
+      "type": "string"
     }
   }
 }

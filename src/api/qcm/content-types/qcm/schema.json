@@ -28,7 +28,7 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::objet.objet",
-      "inversedBy": "qc_ms"
+      "inversedBy": "qcms"
     }
   }
 }

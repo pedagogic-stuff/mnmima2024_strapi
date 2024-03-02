@@ -4,7 +4,8 @@
   "info": {
     "singularName": "atelier",
     "pluralName": "ateliers",
-    "displayName": "Ateliers"
+    "displayName": "Ateliers",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,34 @@
       "type": "string"
     },
     "illustrationAtelier": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "illustrationArtisan": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "objets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::objet.objet",
+      "mappedBy": "atelier"
+    },
+    "Vignettepersonnage": {
       "allowedTypes": [
         "images",
         "files",
@@ -24,15 +53,8 @@
       "type": "media",
       "multiple": false
     },
-    "illustrationArtisan": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "Textepresentation": {
+      "type": "blocks"
     }
   }
 }

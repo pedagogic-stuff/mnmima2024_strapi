@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_objet_pois",
+  "info": {
+    "displayName": "POI"
+  },
+  "options": {},
+  "attributes": {
+    "Cartel": {
+      "type": "blocks"
+    },
+    "Media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
