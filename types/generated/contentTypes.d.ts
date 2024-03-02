@@ -896,6 +896,9 @@ export interface ApiObjetObjet extends Schema.CollectionType {
       'manyToOne',
       'api::atelier.atelier'
     >;
+    CartelSimple: Attribute.Blocks;
+    CoordonnesObjet: Attribute.String;
+    CodeCouleur: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
