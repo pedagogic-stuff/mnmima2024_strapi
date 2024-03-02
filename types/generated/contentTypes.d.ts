@@ -362,30 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiQcmQcm extends Schema.CollectionType {
-  collectionName: 'qcms';
-  info: {
-    singularName: 'qcm';
-    pluralName: 'qcms';
-    displayName: 'QCMs';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Question: Attribute.String;
-    Responses: Attribute.Component<'qcm.reponses', true>;
-    cartel: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::qcm.qcm', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::qcm.qcm', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -792,6 +768,130 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAccueilAccueil extends Schema.SingleType {
+  collectionName: 'accueils';
+  info: {
+    singularName: 'accueil';
+    pluralName: 'accueils';
+    displayName: 'Accueil';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cartelAccueil: Attribute.Blocks;
+    ateliers: Attribute.Relation<
+      'api::accueil.accueil',
+      'oneToMany',
+      'api::atelier.atelier'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::accueil.accueil',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::accueil.accueil',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAtelierAtelier extends Schema.CollectionType {
+  collectionName: 'ateliers';
+  info: {
+    singularName: 'atelier';
+    pluralName: 'ateliers';
+    displayName: 'Ateliers';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nomArtisan: Attribute.String;
+    illustrationAtelier: Attribute.Media;
+    illustrationArtisan: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::atelier.atelier',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::atelier.atelier',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiObjetObjet extends Schema.CollectionType {
+  collectionName: 'objets';
+  info: {
+    singularName: 'objet';
+    pluralName: 'objets';
+    displayName: 'Objets';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nomObjet: Attribute.String;
+    qc_ms: Attribute.Relation<'api::objet.objet', 'oneToMany', 'api::qcm.qcm'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::objet.objet',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::objet.objet',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiQcmQcm extends Schema.CollectionType {
+  collectionName: 'qcms';
+  info: {
+    singularName: 'qcm';
+    pluralName: 'qcms';
+    displayName: 'QCMs';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Question: Attribute.String;
+    Responses: Attribute.Component<'qcm.reponses', true>;
+    cartel: Attribute.Blocks;
+    objet: Attribute.Relation<'api::qcm.qcm', 'manyToOne', 'api::objet.objet'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::qcm.qcm', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::qcm.qcm', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -802,7 +902,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::qcm.qcm': ApiQcmQcm;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -811,6 +910,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::accueil.accueil': ApiAccueilAccueil;
+      'api::atelier.atelier': ApiAtelierAtelier;
+      'api::objet.objet': ApiObjetObjet;
+      'api::qcm.qcm': ApiQcmQcm;
     }
   }
 }

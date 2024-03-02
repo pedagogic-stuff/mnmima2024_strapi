@@ -4,7 +4,8 @@
   "info": {
     "singularName": "qcm",
     "pluralName": "qcms",
-    "displayName": "QCMs"
+    "displayName": "QCMs",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,6 +23,12 @@
     },
     "cartel": {
       "type": "blocks"
+    },
+    "objet": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::objet.objet",
+      "inversedBy": "qc_ms"
     }
   }
 }
