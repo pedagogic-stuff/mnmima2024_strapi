@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "qcms",
+  "info": {
+    "singularName": "qcm",
+    "pluralName": "qcms",
+    "displayName": "QCMs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Question": {
+      "type": "string"
+    },
+    "Responses": {
+      "displayName": "reponses",
+      "type": "component",
+      "repeatable": true,
+      "component": "qcm.reponses"
+    },
+    "cartel": {
+      "type": "blocks"
+    }
+  }
+}

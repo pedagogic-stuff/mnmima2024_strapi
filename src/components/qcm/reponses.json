@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_qcm_reponses",
+  "info": {
+    "displayName": "reponses"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "vraifaux": {
+      "type": "boolean"
+    }
+  }
+}
