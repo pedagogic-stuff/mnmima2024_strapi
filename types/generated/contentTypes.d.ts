@@ -835,6 +835,36 @@ export interface ApiAtelierAtelier extends Schema.CollectionType {
   };
 }
 
+export interface ApiCreditCredit extends Schema.SingleType {
+  collectionName: 'credits';
+  info: {
+    singularName: 'credit';
+    pluralName: 'credits';
+    displayName: 'Cr\u00E9dits';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::credit.credit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::credit.credit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiObjetObjet extends Schema.CollectionType {
   collectionName: 'objets';
   info: {
@@ -912,6 +942,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::accueil.accueil': ApiAccueilAccueil;
       'api::atelier.atelier': ApiAtelierAtelier;
+      'api::credit.credit': ApiCreditCredit;
       'api::objet.objet': ApiObjetObjet;
       'api::qcm.qcm': ApiQcmQcm;
     }

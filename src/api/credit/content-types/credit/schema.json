@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "credits",
+  "info": {
+    "singularName": "credit",
+    "pluralName": "credits",
+    "displayName": "Crédits"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contenu": {
+      "type": "blocks"
+    }
+  }
+}
