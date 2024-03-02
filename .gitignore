@@ -112,7 +112,6 @@ exports
 *.cache
 build
 .strapi-updater.json
-/config/database.js
 /.strapi
 /.env.dev
 /package-lock.json
