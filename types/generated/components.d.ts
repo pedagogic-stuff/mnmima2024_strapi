@@ -4,10 +4,12 @@ export interface ObjetPoi extends Schema.Component {
   collectionName: 'components_objet_pois';
   info: {
     displayName: 'POI';
+    description: '';
   };
   attributes: {
     Cartel: Attribute.Blocks;
     Media: Attribute.Media;
+    coordonnees: Attribute.String;
   };
 }
 
