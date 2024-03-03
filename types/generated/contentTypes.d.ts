@@ -825,6 +825,7 @@ export interface ApiAtelierAtelier extends Schema.CollectionType {
     >;
     Vignettepersonnage: Attribute.Media;
     Textepresentation: Attribute.Blocks;
+    CodeCouleur: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

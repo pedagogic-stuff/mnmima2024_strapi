@@ -44,17 +44,21 @@
       "mappedBy": "atelier"
     },
     "Vignettepersonnage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Textepresentation": {
       "type": "blocks"
+    },
+    "CodeCouleur": {
+      "type": "string"
     }
   }
 }
