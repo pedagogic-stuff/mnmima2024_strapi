@@ -61,11 +61,21 @@
     "CartelSimple": {
       "type": "blocks"
     },
-    "CoordonnesObjet": {
+    "CoordonneesCamera": {
       "type": "string"
     },
     "CodeCouleur": {
       "type": "string"
+    },
+    "visuelObjet2d": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

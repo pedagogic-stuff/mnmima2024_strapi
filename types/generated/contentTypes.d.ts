@@ -898,8 +898,9 @@ export interface ApiObjetObjet extends Schema.CollectionType {
       'api::atelier.atelier'
     >;
     CartelSimple: Attribute.Blocks;
-    CoordonnesObjet: Attribute.String;
+    CoordonneesCamera: Attribute.String;
     CodeCouleur: Attribute.String;
+    visuelObjet2d: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
