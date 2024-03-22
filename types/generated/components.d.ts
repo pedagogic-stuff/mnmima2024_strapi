@@ -9,7 +9,9 @@ export interface ObjetPoi extends Schema.Component {
   attributes: {
     Cartel: Attribute.Blocks;
     Media: Attribute.Media;
-    coordonnees: Attribute.String;
+    poiCoordonnees: Attribute.String;
+    Titre: Attribute.String;
+    poiOrbit: Attribute.String;
   };
 }
 
