@@ -20,7 +20,13 @@
         "audios"
       ]
     },
-    "coordonnees": {
+    "poiCoordonnees": {
+      "type": "string"
+    },
+    "Titre": {
+      "type": "string"
+    },
+    "poiOrbit": {
       "type": "string"
     }
   }
