@@ -77,6 +77,12 @@
         "videos",
         "audios"
       ]
+    },
+    "URLavectexture": {
+      "type": "string"
+    },
+    "URLsanstexture": {
+      "type": "string"
     }
   }
 }

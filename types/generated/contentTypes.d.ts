@@ -901,6 +901,8 @@ export interface ApiObjetObjet extends Schema.CollectionType {
     CoordonneesCamera: Attribute.String;
     CodeCouleur: Attribute.String;
     visuelObjet2d: Attribute.Media;
+    URLavectexture: Attribute.String;
+    URLsanstexture: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
