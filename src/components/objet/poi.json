@@ -20,13 +20,19 @@
         "audios"
       ]
     },
-    "poiCoordonnees": {
-      "type": "string"
-    },
     "Titre": {
       "type": "string"
     },
-    "poiOrbit": {
+    "dataPosition": {
+      "type": "string"
+    },
+    "dataNormal": {
+      "type": "string"
+    },
+    "dataOrbit": {
+      "type": "string"
+    },
+    "dataTarget": {
       "type": "string"
     }
   }
