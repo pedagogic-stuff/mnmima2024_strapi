@@ -903,6 +903,7 @@ export interface ApiObjetObjet extends Schema.CollectionType {
     visuelObjet2d: Attribute.Media;
     URLavectexture: Attribute.String;
     URLsanstexture: Attribute.String;
+    consignePOI: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

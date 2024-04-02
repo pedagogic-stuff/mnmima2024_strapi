@@ -83,6 +83,9 @@
     },
     "URLsanstexture": {
       "type": "string"
+    },
+    "consignePOI": {
+      "type": "text"
     }
   }
 }
