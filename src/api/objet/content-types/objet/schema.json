@@ -21,9 +21,6 @@
       "target": "api::qcm.qcm",
       "mappedBy": "objet"
     },
-    "CodeObjet": {
-      "type": "string"
-    },
     "CarteZone": {
       "type": "media",
       "multiple": false,
@@ -77,12 +74,6 @@
         "videos",
         "audios"
       ]
-    },
-    "URLavectexture": {
-      "type": "string"
-    },
-    "URLsanstexture": {
-      "type": "string"
     },
     "consignePOI": {
       "type": "text"

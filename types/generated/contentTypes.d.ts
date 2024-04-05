@@ -826,6 +826,7 @@ export interface ApiAtelierAtelier extends Schema.CollectionType {
     Vignettepersonnage: Attribute.Media;
     Textepresentation: Attribute.Blocks;
     CodeCouleur: Attribute.String;
+    CheminAtelier: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -888,7 +889,6 @@ export interface ApiObjetObjet extends Schema.CollectionType {
   attributes: {
     nomObjet: Attribute.String;
     qcms: Attribute.Relation<'api::objet.objet', 'oneToMany', 'api::qcm.qcm'>;
-    CodeObjet: Attribute.String;
     CarteZone: Attribute.Media;
     POI: Attribute.Component<'objet.poi', true>;
     Fichier3d: Attribute.Media;
@@ -901,8 +901,6 @@ export interface ApiObjetObjet extends Schema.CollectionType {
     CoordonneesCamera: Attribute.String;
     CodeCouleur: Attribute.String;
     visuelObjet2d: Attribute.Media;
-    URLavectexture: Attribute.String;
-    URLsanstexture: Attribute.String;
     consignePOI: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

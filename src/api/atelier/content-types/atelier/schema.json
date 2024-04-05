@@ -59,6 +59,9 @@
     },
     "CodeCouleur": {
       "type": "string"
+    },
+    "CheminAtelier": {
+      "type": "string"
     }
   }
 }
