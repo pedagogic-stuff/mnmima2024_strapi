@@ -902,6 +902,7 @@ export interface ApiObjetObjet extends Schema.CollectionType {
     CodeCouleur: Attribute.String;
     visuelObjet2d: Attribute.Media;
     consignePOI: Attribute.Text;
+    visuelObjet2d_avecHalo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -77,6 +77,16 @@
     },
     "consignePOI": {
       "type": "text"
+    },
+    "visuelObjet2d_avecHalo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
